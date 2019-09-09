@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
+    "start": "npm run build && npm run copyToMaktub",
     "build": "rimraf lib && tsc",
     "lint": "eslint \"src/**/*.ts\"",
     "format": "prettier --write \"src/**/*.ts\"",
@@ -12,7 +13,8 @@
     "prepublishOnly": "git submodule update --init --recursive && yarn lint",
     "preversion": "yarn lint",
     "version": "yarn format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "copyToMaktub": "copyfiles ./* ../maktub/node_modules/react-native-track-player"
   },
   "files": [
     "lib/**/*",
@@ -63,6 +65,7 @@
     "@types/react-native": "^0.60.0",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
+    "copyfiles": "^2.1.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.2.0",
     "eslint-plugin-prettier": "^3.0.1",
