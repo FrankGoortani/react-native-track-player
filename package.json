@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "start": "npm run prepublishOnly && npm run build && npm run copyToMaktub",
+    "start": "npm run build && npm run copyToMaktub",
     "build": "rimraf lib && tsc",
     "lint": "eslint \"src/**/*.ts\"",
     "format": "prettier --write \"src/**/*.ts\"",
@@ -46,7 +46,6 @@
     "chromecast",
     "android",
     "ios",
-    "windows",
     "hooks"
   ],
   "license": "Apache-2.0",
